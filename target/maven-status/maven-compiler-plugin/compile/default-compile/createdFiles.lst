@@ -1,0 +1,12 @@
+com/src/coffeeMachine/model/Water.class
+com/src/coffeeMachine/model/CoffeePowder.class
+com/src/coffeeMachine/coffeeType/Espresso.class
+com/src/coffeeMachine/coffeeMachine.class
+com/src/coffeeMachine/model/Ingredient.class
+com/src/coffeeMachine/model/Sugar.class
+com/src/coffeeMachine/coffeeType/coffee.class
+com/src/coffeeMachine/coffeeType/coffeeMachineFactoryImpl.class
+com/src/coffeeMachine/model/Milk.class
+com/src/coffeeMachine/coffeeType/mochaLatte.class
+com/src/coffeeMachine/coffeeType/Recipe.class
+com/src/Main.class
