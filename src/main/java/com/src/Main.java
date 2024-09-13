@@ -1,24 +1,22 @@
 package com.src;
-// import com.google.inject.Guice;
-// import com.google.inject.Injector;
-// import com.src.modules.CoffeeMachineModule;
 
-import com.src.coffeeMachine.coffeeMachine;
-import com.src.coffeeMachine.pojo.Ingredients;
+import com.src.coffeemachine.CoffeeMachine;
+import com.src.coffeemachine.CoffeeType;
+import com.src.coffeemachine.Inventory;
+import com.src.coffeemachine.model.*;
 
+
+//command to run this code : mvn exec:java -Dexec.mainClass="com.src.Main"
 public class Main {
     public static void main(String[] args) {
-        // Injector injector = Guice.createInjector(new CoffeeMachineModule());
-        Ingredients ingredients = Ingredients.builder()
-                .milk(1200)
-                .coffee(500)
-                .sugar(500)
-                .water(1500)
-                .build();
-        coffeeMachine coffeeMachine = new coffeeMachine(ingredients);
-        coffeeMachine.getCoffee("espresso");
-        coffeeMachine.getCoffee("mochaLatte");
+        Inventory inventory = new Inventory();
+        inventory.addIngredient(Item.Milk, new Milk(1400));
+        inventory.addIngredient(Item.Sugar, new Sugar(400));
+        inventory.addIngredient(Item.Coffee, new CoffeePowder(400));
+        inventory.addIngredient(Item.Water, new Water(1400));
+        CoffeeMachine coffeeMachine = new CoffeeMachine(inventory);
+        coffeeMachine.getCoffee(CoffeeType.Espresso);
+        coffeeMachine.getCoffee(CoffeeType.Latte);
         coffeeMachine.DisplayCurrentIngredients();
-        coffeeMachine.addIngredient(ingredients);
     }
 }
